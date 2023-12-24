@@ -19,7 +19,7 @@ function transform(arr) {
   }
   let resultArr = [];
   let isDiscardNext = false;
-  if (arr.length === 0) {
+  if (!arr.length) {
     return resultArr;
   }
   for (let i = 0; i < arr.length; i++){
