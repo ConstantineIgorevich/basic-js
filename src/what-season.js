@@ -18,6 +18,9 @@ function getSeason(date) {
   if (Object.prototype.toString.call(date) !== '[object Date]') {
     throw Error('Invalid date!');
   }
+  if (Object.getOwnPropertyNames(date).length !== Object.getOwnPropertyNames(new Date()).length) {
+    throw Error('Invalid date!');
+  }
   switch(date.getMonth()){
     case 0:
     case 1:
