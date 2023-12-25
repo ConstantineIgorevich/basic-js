@@ -14,8 +14,20 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For 00-1B-63-84-45-E6, the output should be true.
  *
  */
-function isMAC48Address(/* n */) {
-  throw new NotImplementedError('Not implemented');
+function isMAC48Address(n) {
+  const arrOfValidCharacters = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','-'];
+  for (let i = 0; i < n.length; i++){
+    let isConfirum = false;
+    for (character of arrOfValidCharacters){
+      if (n[i] === character){
+        isConfirum = true;
+      }
+    }
+    if (!isConfirum) {
+      return false;
+    }
+  }
+  return true;
   // remove line with error and write your code here
 }
 module.exports = {
